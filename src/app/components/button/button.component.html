@@ -1,9 +1,9 @@
 <p>button works!</p>
- <h2>{{data}}</h2> 
+ <h2>{{counter}}</h2> 
 
-    <button mat-fab color="primary" aria-label="Example icon button with a home icon" (click) = "btnStart()">
+    <button mat-fab color="primary" aria-label="Example icon button with a home icon">
         <mat-icon>play_arrow</mat-icon>
     </button>
-    <button mat-fab color="primary" aria-label="Example icon button with a home icon" (click)="btnStart()">
+    <button mat-fab color="primary" aria-label="Example icon button with a home icon" (click)="stopCount()" >
         <mat-icon>pause_icon</mat-icon>
     </button>
