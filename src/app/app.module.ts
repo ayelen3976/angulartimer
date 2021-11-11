@@ -7,9 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
 
+//service
 import { HttpClientModule } from '@angular/common/http';
 import { ServicesService } from './services/services.service';
 
@@ -17,12 +21,18 @@ import { ServicesService } from './services/services.service';
 import { ButtonComponent } from './components/button/button.component';
 import { LoginComponent } from './components/login/login.component';
 import { RouterModule } from '@angular/router';
+import { StatisticsComponent } from './components/statistics/statistics.component';
+import { SimulationComponent } from './components/simulation/simulation.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
-    LoginComponent
+    LoginComponent,
+    StatisticsComponent,
+    SimulationComponent,
+    HomeComponent,
   ],
   imports: [
     HttpClientModule,
@@ -32,14 +42,15 @@ import { RouterModule } from '@angular/router';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-  
+    MatToolbarModule,
+    MatDialogModule,
+    MatTableModule,
     RouterModule.forRoot([
-      { path: '', component: LoginComponent },
-       {path: 'btn' , component:  ButtonComponent}
-    ])
-
+      { path: '', component: HomeComponent },
+      { path: 'login', component: LoginComponent },
+    ]),
   ],
   providers: [ServicesService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

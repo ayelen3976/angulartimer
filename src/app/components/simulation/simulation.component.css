@@ -1,11 +1,9 @@
-.nav-color{
-    background: #293241;
-}
-.btn-nav{
-    margin-right: auto;
-}
-/* STYLE NAVBAR */
 
+.txt-wait{
+    padding-top: 7em;
+    font-size: 10px;
+    text-align: center;
+}
 .cont-btn {
     display: flow-root;
   text-align: -webkit-center;

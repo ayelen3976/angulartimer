@@ -1,0 +1,26 @@
+
+
+<!-- NUMBER -->
+<!-- <div class='txt-wait'><p>Wait...</p></div> -->
+<div class="cont-btn">
+  
+    <div class='number'>
+      
+        <h2>{{ counter }}</h2>
+    </div>
+    <!-- BUTTON -->
+
+    <button mat-fab class="color-btn" [style.background]="btnColor" [disabled]="btnDisabled"
+        aria-label="Example icon button with a home icon" >
+        <div *ngIf="autoClick; else play">
+            <mat-icon class='icon-btn'>play_arrow</mat-icon>
+        </div>
+    </button>
+
+
+
+</div>
+
+<ng-template #play>
+    <mat-icon class='icon-btn'>pause_icon</mat-icon>
+</ng-template>

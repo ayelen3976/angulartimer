@@ -1,75 +1,52 @@
-import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { ServicesService } from '../../services/services.service';
-import { StatisticsComponent } from '../statistics/statistics.component';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.css'],
+  selector: 'app-simulation',
+  templateUrl: './simulation.component.html',
+  styleUrls: ['./simulation.component.css'],
 })
-export class ButtonComponent implements OnInit {
+export class SimulationComponent implements OnInit {
   @Input() init: number = 60;
+  // @Output() showSimulation = new EventEmitter<boolean>();
 
-  public counter: number = 60;
-  estado: boolean = false;
+  public counter: number = 0;
+
   save: number = 0;
   btnColor: String = '';
   btnDisabled: boolean = false;
   showStatics: boolean = false;
-  alreadyPlay: string = 'false';
+  //auto Click
+  autoClick: boolean = false;
 
-  constructor(private service: ServicesService) {}
+  constructor() {}
 
   staticsShowSquare() {
     this.showStatics = true;
   }
 
   ngOnInit(): void {
-    this.service.getUsers().subscribe(
-      (response) => {
-        console.log(response);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-    //initialitation
+    this.StartCountDown();
 
-    const getLocal = localStorage.getItem('pressbutton');
-    if (getLocal === 'true') {
-      this.estado = true;
-    } else {
-      this.StartCountDown();
-    }
+    setInterval(() => this.myMethodClick(), 5000);
   }
+  myMethodClick() {
+    this.autoClick = true;
 
+    //  this.showSimulation.emit(false);
+  }
   StartCountDown() {
-    if (this.estado === false && this.init > 0) {
+    if (this.init > 0) {
       this.counter = this.init;
       this.doCountDown();
     }
   }
-  stopCount() {
-    this.estado = true;
-    this.staticsShowSquare();
-    //this.counter = this.counter;
-
-    const getLocal = localStorage.getItem('pressbutton');
-    if (getLocal === 'true') {
-      this.estado = true;
-      alert('YA JUGO!');
-    }
-  }
 
   doCountDown() {
-    if (this.estado) {
+    if (this.autoClick) {
       this.save = this.counter;
 
-      this.alreadyPlay = 'true';
-      localStorage.setItem('pressbutton', this.alreadyPlay);
       if (this.save > 0) {
-        this.counter = this.save;
+        this.counter = 60;
         // this.init = 60
 
         if (this.save <= 60 && this.save >= 52) {

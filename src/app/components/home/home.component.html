@@ -1,0 +1,9 @@
+<div>
+
+   
+    <app-simulation *ngIf= "showSimulation === 'true';  else showuser"></app-simulation>
+</div>
+
+<ng-template #showuser>
+<app-button></app-button>
+</ng-template>

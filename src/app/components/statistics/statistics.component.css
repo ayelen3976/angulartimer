@@ -1,0 +1,29 @@
+.div-table {
+  padding: 1%;
+  text-align: center;
+  float:right;
+}
+.title-statics{
+    text-align:center;
+    margin-right: 2em;
+    font-weight:500;
+}
+table {
+  width: 40%;
+  text-align: center;
+}
+
+th {
+  
+  text-align-last: center;
+}
+.icon-color{
+    
+    font-size: 15px;
+    margin-top:20px;
+ 
+}
+.title{
+      font-weight: 600 !important;
+  font-size: 15px;
+}

@@ -1,9 +1,50 @@
-<p>button works!</p>
- <h2>{{counter}}</h2> 
+<!-- NAVBAR -->
+<p>
+    <mat-toolbar class='nav-color'>
+        <mat-toolbar-row>
 
-    <button mat-fab color="primary" aria-label="Example icon button with a home icon">
-        <mat-icon>play_arrow</mat-icon>
-    </button>
-    <button mat-fab color="primary" aria-label="Example icon button with a home icon" (click)="stopCount()" >
-        <mat-icon>pause_icon</mat-icon>
-    </button>
+            <span class='btn-nav'></span>
+            <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon"
+                (click)="staticsShowSquare()">
+                <mat-icon class='icon-statics'> insert_chart_outlined</mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</p>
+
+<app-statistics *ngIf="showStatics"></app-statistics>
+
+
+
+
+
+
+    <div class="cont-btn">
+
+        <!-- NUMBER -->
+        <div class='number'>
+            <h2>{{ counter }}</h2>
+        </div>
+        <!-- BUTTON -->
+
+        <button mat-fab class="color-btn" [style.background]="btnColor" [disabled]="btnDisabled"
+            aria-label="Example icon button with a home icon" (click)="stopCount()">
+            <div *ngIf="estado; else play">
+                <mat-icon class='icon-btn'>play_arrow</mat-icon>
+            </div>
+        </button>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+<ng-template #play>
+    <mat-icon class='icon-btn'>pause_icon</mat-icon>
+</ng-template>
