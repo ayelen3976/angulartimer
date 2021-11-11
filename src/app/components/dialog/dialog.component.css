@@ -1,0 +1,10 @@
+table {
+  width: 100%;
+}
+.btn-close{
+  text-align:right;
+  margin-top:1.5em;
+}
+.title-users{
+  font-weight: 500;
+}

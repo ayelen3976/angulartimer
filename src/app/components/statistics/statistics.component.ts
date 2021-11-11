@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ServicesService } from 'src/app/services/services.service';
 
 export interface PeriodicElement {
   name: string;
   username: number;
-  color:string
+  color: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
@@ -24,17 +23,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class StatisticsComponent implements OnInit {
   data = [];
-  constructor(private service: ServicesService) {}
-  ngOnInit(): void {
-    this.service.getUsers().subscribe(
-      (response) => {
-        console.log(response, 'dataa 2');
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  }
+  constructor() {}
+  ngOnInit(): void {}
 
   displayedColumns: string[] = ['username', 'name'];
   dataSource = ELEMENT_DATA;

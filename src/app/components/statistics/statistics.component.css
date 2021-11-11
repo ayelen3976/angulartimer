@@ -27,3 +27,6 @@ th {
       font-weight: 600 !important;
   font-size: 15px;
 }
+.cdk-overlay-pane {
+  width : 100% !important;
+}

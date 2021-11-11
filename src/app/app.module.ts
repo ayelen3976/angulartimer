@@ -24,6 +24,7 @@ import { RouterModule } from '@angular/router';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { SimulationComponent } from './components/simulation/simulation.component';
 import { HomeComponent } from './components/home/home.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HomeComponent } from './components/home/home.component';
     StatisticsComponent,
     SimulationComponent,
     HomeComponent,
+    DialogComponent,
   ],
   imports: [
     HttpClientModule,

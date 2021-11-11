@@ -1,7 +1,6 @@
-import { Component, Input, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ServicesService } from '../../services/services.service';
-import { StatisticsComponent } from '../statistics/statistics.component';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-button',
@@ -19,21 +18,24 @@ export class ButtonComponent implements OnInit {
   showStatics: boolean = false;
   alreadyPlay: string = 'false';
 
-  constructor(private service: ServicesService) {}
+  constructor(public dialog: MatDialog) { }
+
+  openDialog() {
+
+    this.dialog.open(DialogComponent, {
+      // height: '400px',
+      width: '100%',
+    });
+
+
+  }
 
   staticsShowSquare() {
     this.showStatics = true;
   }
 
   ngOnInit(): void {
-    this.service.getUsers().subscribe(
-      (response) => {
-        console.log(response);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
+
     //initialitation
 
     const getLocal = localStorage.getItem('pressbutton');
@@ -58,7 +60,7 @@ export class ButtonComponent implements OnInit {
     const getLocal = localStorage.getItem('pressbutton');
     if (getLocal === 'true') {
       this.estado = true;
-      alert('YA JUGO!');
+      alert('YA TÉRMINO SU TURNO!');
     }
   }
 

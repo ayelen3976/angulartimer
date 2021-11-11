@@ -13,7 +13,17 @@ padding-top: 12em;
 
 
 }
+.btn-user{
+ margin: 5%;
+  color:white;
+}
+.aligned-with-icon{
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 5px; /* optional */
+}
 .icon-statics{
+     margin-top: 28%;
     color:white;
   
 }
@@ -40,9 +50,11 @@ h2 {
   border: 1px solid gray;
 }
 .icon-btn {
-   
+
   height: 60px !important;
   width: 52px !important;
   font-size: 60px;
 }
-
+.cdk-overlay-pane {
+  width : 100%;
+}
